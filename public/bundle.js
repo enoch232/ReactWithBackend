@@ -21522,7 +21522,8 @@
 	        _reactRouter.Router,
 	        { history: _reactRouter.browserHistory },
 	        _react2.default.createElement(_reactRouter.Route, { path: '/', component: _IndexPage2.default }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _AboutPage2.default })
+	        _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _AboutPage2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/*', component: _NoMatchPage2.default })
 	      );
 	    }
 	  }]);
@@ -27537,12 +27538,27 @@
 	  }
 
 	  _createClass(NoMatchPage, [{
+	    key: '_alert',
+	    value: function _alert() {
+	      alert("Hello");
+	      console.log("hello");
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        'No page'
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          'No page'
+	        ),
+	        _react2.default.createElement(
+	          'button',
+	          { onClick: this._alert },
+	          'Alert'
+	        )
 	      );
 	    }
 	  }]);

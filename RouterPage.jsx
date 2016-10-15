@@ -11,6 +11,7 @@ class RouterPage extends React.Component{
       <Router history={browserHistory}>
         <Route path="/" component={IndexPage}></Route>
         <Route path="/about" component={AboutPage}></Route>
+        <Route path="/*" component={NoMatchPage}></Route>
       </Router>
     )
   }
